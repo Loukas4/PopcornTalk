@@ -42,5 +42,36 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.post('/login', async (req, res) => {
+    try {
+        //1. Receive data from the Frontend
+        const { email, password } = req.body;
+
+        //2. Check if user exists in the database
+        const user = await User.findOne({ email: email });
+        if (!user) {
+            // Send status 400 (Bad Request) if user is not found
+            return res.status(400).json({ message: 'Invalid email or password' });
+        }
+
+        //3. Compare the provided password with the hashed password in the database
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            // Send status 400 (Bad Request) if password does not match
+            return res.status(400).json({ message: 'Invalid email or password' });
+        }
+
+        //4. Send success response to the Frontend (status 200: OK)
+        res.status(200).json({ message: 'Login successful' });
+
+    } catch (error) {
+        // Log the error to the server console for debugging
+        console.error('Error during login:', error);
+
+        // Send a generic error message to the user
+        res.status(500).json({ message: 'Error logging in', error });
+    }
+});
+
 // Export the router so index.js can import and use it
 module.exports = router;
