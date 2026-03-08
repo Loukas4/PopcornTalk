@@ -24,6 +24,106 @@ year: 2008,
 genre: ["Action", "Crime", "Drama"],
 description: "When the menace known as the Joker wreaks havoc...",
 poster_url: "thedarkknight.jpg"
+},
+{
+    "title": "Schindler's List",
+    "year": 1993,
+    "genre": ["Biography", "Drama", "History"],
+    "director": "Steven Spielberg",
+    "description": "In German-occupied Poland during WWII, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce.",
+    "poster_url": "/Schindlers_List.jpg",
+    "runtime": 195,
+    "top_review": "A masterpiece of humanity in the darkest times. 10/10"
+},
+{
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "genre": ["Crime", "Drama"],
+    "director": "Quentin Tarantino",
+    "description": "The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.",
+    "poster_url": "/Pulp_fiction.jpg",
+    "runtime": 154,
+    "top_review": "The coolest movie ever made. Revolutionary dialogue!"
+},
+{
+    "title": "Inception",
+    "year": 2010,
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "director": "Christopher Nolan",
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea.",
+    "poster_url": "/Inception.png",
+    "runtime": 148,
+    "top_review": "A mind-bending journey that keeps you guessing until the end."
+},
+{
+    "title": "Fight Club",
+    "year": 1999,
+    "genre": ["Drama"],
+    "director": "David Fincher",
+    "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+    "poster_url": "/FightClub.jpg",
+    "runtime": 139,
+    "top_review": "Gritty, smart, and completely unexpected. Rule #1: Watch it."
+},
+{
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "genre": ["Action", "Adventure", "Drama"],
+    "director": "Peter Jackson",
+    "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom.",
+    "poster_url": "/LOTR.jpg",
+    "runtime": 201,
+    "top_review": "The perfect conclusion to the greatest trilogy in cinema history."
+},
+{
+    "title": "Forrest Gump",
+    "year": 1994,
+    "genre": ["Drama", "Romance"],
+    "director": "Robert Zemeckis",
+    "description": "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75.",
+    "poster_url": "/ForestGump.jpg",
+    "runtime": 142,
+    "top_review": "Life is like a box of chocolates... and this movie is the best one."
+},
+{
+    "title": "The Matrix",
+    "year": 1999,
+    "genre": ["Action", "Sci-Fi"],
+    "director": "Lana & Lilly Wachowski",
+    "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "poster_url": "/TheMatrix.jpg",
+    "runtime": 136,
+    "top_review": "It changed science fiction forever. Visuals and philosophy combined."
+},
+{
+    "title": "Goodfellas",
+    "year": 1990,
+    "genre": ["Biography", "Crime", "Drama"],
+    "director": "Martin Scorsese",
+    "description": "The story of Henry Hill and his life in the mob, covering his relationship with his wife and his mob partners.",
+    "poster_url": "/Goodfellas.jpg",
+    "runtime": 145,
+    "top_review": "The ultimate mob movie. Brutal, fast-paced, and brilliant."
+},
+{
+    "title": "Interstellar",
+    "year": 2014,
+    "genre": ["Adventure", "Drama", "Sci-Fi"],
+    "director": "Christopher Nolan",
+    "description": "When Earth becomes uninhabitable, a farmer and ex-NASA pilot is tasked to pilot a spacecraft, along with a team of researchers.",
+    "poster_url": "/Interstellar.jpg",
+    "runtime": 169,
+    "top_review": "A visual masterpiece about love and time. Emotional and epic."
+},
+{
+    "title": "Parasite",
+    "year": 2019,
+    "genre": ["Drama", "Thriller"],
+    "director": "Bong Joon Ho",
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "poster_url": "/Parasite.jpg",
+    "runtime": 132,
+    "top_review": "A brilliant social commentary that shifts genres effortlessly."
 }
 ];
 
