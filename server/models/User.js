@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema({
+const userSchema = new mongoose.Schema({
     displayName: {
         type: String,
         required: false, // Optional field for display name
@@ -21,4 +21,4 @@ const Schema = mongoose.Schema({
     timestamps: true,   // Automatically add createdAt and updatedAt fields
 });
 
-module.exports = mongoose.model('User', Schema);
+module.exports = mongoose.model('User', userSchema);
