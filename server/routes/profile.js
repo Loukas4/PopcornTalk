@@ -1,21 +1,21 @@
-// GET /api/profile/userId
-// Return only email
-router.get('/userId', async (req, res) => {
-    try {
-        
-        const user = await User.findById(req.params.userId).select('email');
-        
-        if (!user) {
-            return res.status(404).json({ message: 'User not found.' });
-        }
+const express = require('express');
+const router = express.Router();
+const User = require('../models/User');
 
-        // Return ID, email
+// GET /api/profile/:userId
+router.get('/:userId', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId).select('email password');
+        if (!user) return res.status(404).json({ message: 'User not found.' });
+
         res.status(200).json({
-            id: user._id,
-            email: user.email
+            email: user.email,
+            password: user.password, // hashed
         });
     } catch (err) {
         console.error('Get profile error:', err);
         res.status(500).json({ message: 'Server error.' });
     }
 });
+
+module.exports = router;

@@ -13,12 +13,13 @@ const port = process.env.PORT || 3000;
 // Import routes
 const authRoutes = require('./routes/auth');
 
+const profileRoutes = require('./routes/profile')
 
 // Middleware
 app.use(cors());
 app.use(express.json()); // For parsing JSON bodies
 app.use('/api/auth', authRoutes); // Use auth routes
-app.use('/', profileRouter); // Use profile routes
+app.use('/api/profile', profileRouter);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
