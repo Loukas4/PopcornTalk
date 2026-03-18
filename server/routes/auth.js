@@ -7,7 +7,7 @@ const User = require('../models/User'); //Import the User model
 router.post('/register', async (req, res) => {
     try {
         // 1. Receive data from the Frontend
-        const { email, password } = req.body;
+        const { displayName, email, password } = req.body;
 
         // 2. Check if user already exists
         const existingUser = await User.findOne({ email: email });
@@ -23,6 +23,7 @@ router.post('/register', async (req, res) => {
 
         // 4. Create new user using the Model
         const newUser = new User({
+            displayName: displayName,
             email: email,
             password: hashedPassword
         });
