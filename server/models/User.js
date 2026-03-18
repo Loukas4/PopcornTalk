@@ -17,6 +17,9 @@ const Schema = mongoose.Schema({
         type: String,   // Store hashed password
         required: true, // Make password a required field
     },
+    age: {
+        type: Number
+    }
 }, {
     timestamps: true,   // Automatically add createdAt and updatedAt fields
 });
