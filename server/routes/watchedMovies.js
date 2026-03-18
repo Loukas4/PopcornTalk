@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const WatchedMovie = require('../models/WatchedMovie'); //Import the WatchedMovie model
 
-module.exports = router;
-
 //POST Request to add a watched movie
 router.post('/add', async (req, res) => {
     try {
@@ -33,3 +31,22 @@ router.post('/add', async (req, res) => {
         res.status(500).json({ message: 'Error adding watched movie', error: error.message });
     }
 });
+
+//GET Request to retrieve watched movies for a user
+router.get('/user/:userId', async (req, res) => {
+    try {
+        // 1. Get userId from the request parameters
+        const { userId } = req.params;
+
+        // 2. Find all watched movies for the specified user
+        const watchedMovies = await WatchedMovie.find({ userId: userId });
+
+        // 3. Send the retrieved watched movies as a response
+        res.status(200).json({ message: 'Watched movies retrieved successfully', watchedMovies: watchedMovies });
+    } catch (error) {
+        // 4. Send an error response
+        res.status(500).json({ message: 'Error retrieving watched movies', error: error.message });
+    }
+});
+
+module.exports = router; //Export the router to be used in the main server file (index.js)
