@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const MovieSchema = new mongoose.Schema({
-    movieId: {
+    tmdbId: { //Νέο όνομα του movieId
         type: Number,      // Το ID από το εξωτερικό API (π.χ. TMDB)
         required: true,
         unique: true       // Δεν θέλουμε την ίδια ταινία δύο φορές

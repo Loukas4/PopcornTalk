@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const CommentSchema = new mongoose.Schema({
-    movieId: {
+    tmdbId: {
         type: Number, // Το ID από το TMDB (π.χ. 27205)
         required: true
     },
