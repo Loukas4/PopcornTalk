@@ -12,13 +12,15 @@ const port = process.env.PORT || 3000;
 
 // Import routes
 const authRoutes = require('./routes/auth');
+const watchedMoviesRoutes = require('./routes/watchedMovies');
 
 const profileRoutes = require('./routes/profile')
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // For parsing JSON bodies
-app.use('/api/auth', authRoutes); // Use auth routes
+app.use(express.json());    // For parsing JSON bodies
+app.use('/api/auth', authRoutes);// Use auth routes for any requests to /auth
+app.use('/api/watched-movies', watchedMoviesRoutes); // Use watched movies routes for any requests to /watched-movies
 app.use('/api/profile', profileRouter);
 
 // Connect to MongoDB
