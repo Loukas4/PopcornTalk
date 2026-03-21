@@ -46,7 +46,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         //1. Receive data from the Frontend
-        const { email, password } = req.body;
+        const { email, password, age} = req.body;
 
         //2. Check if user exists in the database
         const user = await User.findOne({ email: email });
