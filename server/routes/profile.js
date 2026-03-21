@@ -10,7 +10,6 @@ router.get('/:userId', async (req, res) => {
 
         res.status(200).json({
             email: user.email,
-            password: user.password, // hashed
             age: user.age
         });
     } catch (err) {
