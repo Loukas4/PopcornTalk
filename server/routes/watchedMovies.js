@@ -49,4 +49,18 @@ router.get('/user/:userId', async (req, res) => {
     }
 });
 
+//GET Request to retrieve all watched movies (Community Feed)
+router.get('/feed', async (req, res) => {
+    try {
+        // 1. Find all watched movies from all users
+        const watchedMovies = await WatchedMovie.find();
+ 
+        // 2. Send the retrieved watched movies as a response
+        res.status(200).json({ message: 'Community feed retrieved successfully', watchedMovies: watchedMovies });
+    } catch (error) {
+        // 3. Send an error response
+        res.status(500).json({ message: 'Error retrieving community feed', error: error.message });
+    }
+});
+
 module.exports = router; //Export the router to be used in the main server file (index.js)
