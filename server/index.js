@@ -20,7 +20,7 @@ app.use(express.json()); // For parsing JSON bodies
 
 //Routes
 app.use('/api/auth', authRoutes); // Use auth routes
-app.use('/api/profile', profileRouter);
+app.use('/api/profile', profileRoutes);
 
 
 // Connect to MongoDB

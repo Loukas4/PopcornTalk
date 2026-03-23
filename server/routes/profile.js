@@ -5,7 +5,7 @@ const User = require('../models/User');
 // GET /api/profile/:userId
 router.get('/:userId', async (req, res) => {
     try {
-        const user = await User.findById(req.params.userId).select('email password age');
+        const user = await User.findById(req.params.userId).select('email age');
         if (!user) return res.status(404).json({ message: 'User not found.' });
 
         res.status(200).json({
