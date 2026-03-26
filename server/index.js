@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 // Import routes
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
-const watchlistRoutes = require('./routes/WatchList');
+const watchlistRoutes = require('./routes/Watchlist');
 
 
 
