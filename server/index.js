@@ -4,20 +4,30 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 
+
+// Import routes
+const authRoutes = require('./routes/auth');
+const profileRoutes = require('./routes/profile');
+
 const app = express();
 const port = process.env.PORT || 3000;
+
 
 // Middleware
 app.use(cors());
 app.use(express.json()); // For parsing JSON bodies
 
+
+//Routes
+app.use('/api/auth', authRoutes); // Use auth routes
+app.use('/api/profile', profileRoutes);
+
+
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('MongoDB connection error:', err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("Connected to MongoDB!"))
+  .catch(err => console.error("Could not connect to MongoDB", err));
+
 
 // Test route
 app.get('/', (req, res) => {
@@ -27,3 +37,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
+
+
