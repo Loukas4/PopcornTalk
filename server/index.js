@@ -8,6 +8,9 @@ const bcrypt = require('bcrypt');
 // Import routes
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
+const watchlistRoutes = require('./routes/WatchList');
+
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,7 +24,7 @@ app.use(express.json()); // For parsing JSON bodies
 //Routes
 app.use('/api/auth', authRoutes); // Use auth routes
 app.use('/api/profile', profileRoutes);
-
+app.use('/api/watchlist', watchlistRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
