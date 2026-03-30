@@ -9,6 +9,7 @@ const bcrypt = require('bcrypt');
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 const watchlistRoutes = require('./routes/Watchlist');
+const watchedMoviesRoutes = require('./routes/watchedMovies');
 
 
 
@@ -25,6 +26,7 @@ app.use(express.json()); // For parsing JSON bodies
 app.use('/api/auth', authRoutes); // Use auth routes
 app.use('/api/profile', profileRoutes);
 app.use('/api/watchlist', watchlistRoutes);
+app.use('/api/watchedMovies', watchedMoviesRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)

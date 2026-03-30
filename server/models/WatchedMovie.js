@@ -8,10 +8,9 @@ const watchedMovieSchema = new mongoose.Schema({
         ref: 'User',                          // Establishes a relationship with the User model
         required: true
     },
-    // Reference to the Movie that was watched
+    // Title of the movie that was watched
     movieId: {
-        type: mongoose.Schema.Types.ObjectId, // Reference to the Movie model
-        ref: 'Movie',
+        type: String,
         required: true
     },
     rating: {

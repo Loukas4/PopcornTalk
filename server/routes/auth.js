@@ -63,7 +63,7 @@ router.post('/login', async (req, res) => {
         }
 
         //4. Send success response to the Frontend (status 200: OK)
-        res.status(200).json({ message: 'Login successful' });
+        res.status(200).json({ message: 'Login successful', userId: user._id, displayName: user.displayName });
 
     } catch (error) {
         // Log the error to the server console for debugging
